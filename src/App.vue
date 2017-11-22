@@ -3,7 +3,7 @@
     class="container-fluid">
     <topbar />
     <div class="row">
-      <sidebar />
+      <sidebar @added="addedItem()" />
       <div class="col-md-8">
         <page></page>
       </div>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import Sidebar from './components/Sidebar';
+import Sidebar from './components/Sidebar/Sidebar';
 import Page from './components/Page';
 import Topbar from './components/Header/Topbar';
 
@@ -22,6 +22,11 @@ export default {
     Sidebar,
     Page,
     Topbar,
+  },
+  methods: {
+    addedItem() {
+      console.log('emitteddddd');
+    },
   },
 };
 

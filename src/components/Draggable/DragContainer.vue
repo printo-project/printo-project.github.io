@@ -1,17 +1,27 @@
 <template>
   <div class="resize-container"
     id="resize-container">
-
+    <draggable-item v-for="count in componentCount"
+      :key="count.id" />
   </div>
 </template>
 
 <script>
 import { interact } from 'interactjs';
 import Helpers from '../mixins/Helpers';
+import DraggableItem from './DraggableItem';
 
 export default {
   name: 'DragContainer',
   mixins: [Helpers],
+  components: {
+    DraggableItem,
+  },
+  data() {
+    return {
+      componentCount: 2,
+    };
+  },
   methods: {
     dragMoveListener(event) {
       const target = event.target;
