@@ -6,38 +6,48 @@
       <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
       <div class="card-deck">
         <div class="card">
-          <img class="card-img-top" src="/static/img/background.jpg" alt="Card image cap">
+          <img class="card-img-top" src="/static/img/wedding.jpg" alt="Card image cap">
           <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
+            <div class="row">
+              <div class="col-md-8">
+                <h5>Wedding Invitation</h5>
+              </div>
+              <div class="col-md-4">
+                <router-link to="/builder" class="btn btn-secondary btn-sm">Start Now
+                  <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </router-link>
+              </div>
+            </div>
           </div>
-          <div class="card-footer">
-            <router-link to="/builder" class="btn btn-secondary btn-lg">Go to Bar <span class="glyphicon glyphicon-arrow-right"></span></router-link>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="/static/img/invoice.jpg" alt="Card image cap">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-8">
+                <h5>Invoice</h5>
+              </div>
+              <div class="col-md-4">
+                <router-link to="/builder" class="btn btn-secondary btn-sm">Start Now
+                  <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </router-link>
+              </div>
+            </div>
           </div>
         </div>
         <div class="card">
           <img class="card-img-top" src="/static/img/background.jpg" alt="Card image cap">
           <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <router-link to="/builder" class="btn btn-secondary btn-lg">Go to Bar</router-link>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="/static/img/background.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-            <router-link to="/builder" class="btn btn-secondary btn-lg">Go to Bar</router-link>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
+            <div class="row">
+              <div class="col-md-8">
+                <h5>Wedding Invitation</h5>
+              </div>
+              <div class="col-md-4">
+                <router-link to="/builder" class="btn btn-secondary btn-sm">Start Now
+                  <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </router-link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -59,7 +69,13 @@ export default {
 .card {
   background-color: transparent;
 }
-.btn{
+.btn {
   float: right;
+}
+h4{
+  margin-bottom: 0;
+}
+i {
+  margin-left: 2vh;
 }
 </style>
