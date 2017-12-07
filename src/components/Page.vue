@@ -19,7 +19,7 @@ export default {
     DragContainer,
   },
   computed: mapState({
-    background: state => state.pageBackground,
+    background: state => state.page.background,
   }),
 };
 </script>

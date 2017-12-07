@@ -1,6 +1,6 @@
 <template>
   <div class="col-md-3 col-md-offset-1">
-    <ul class="nav nav-pills nav-stacked with-shadow">
+    <ul class="nav nav-pills nav-stacked">
       <sidebar-item v-for="(item, index) in items"
         :key="item.id"
         :index="index"
@@ -19,7 +19,7 @@ export default {
     SidebarItem,
   },
   computed: mapState({
-    items: state => state.sidebarItems,
+    items: state => state.sidebar.items,
   }),
 };
 </script>
@@ -31,21 +31,19 @@ export default {
 
 .nav-title {
   display: block;
-  padding: 3px 12px;
-  font-size: 11px;
-  font-weight: bold;
+  padding: 10px 12px;
+  font-size: 16px;
   line-height: 18px;
-  color: #999999;
-  text-transform: uppercase;
+  color: #676767;
+  background: #efefef;
   position: relative;
-  margin: 10px 0;
 }
 
 .nav-title::after {
   content: '';
   position: absolute;
-  width: 30%;
-  height: 1px;
+  width: 10%;
+  height: 0px;
   background: #cccccc;
   bottom: 0;
   left: 12px;

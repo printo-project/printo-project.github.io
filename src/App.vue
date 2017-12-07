@@ -69,4 +69,8 @@ body {
 .glyphicon {
   vertical-align: text-top;
 }
+
+.btn:focus {
+  outline: none;
+}
 </style>

@@ -1,17 +1,27 @@
 <template>
   <form action="myform.cgi"
     class="invoice-upload">
-    <input type="file"
-      name="fileupload"
-      value="fileupload"
-      id="fileupload"
-      @change="handleImageUpload">
+    <label class="btn btn-default btn-block">
+      <span class="glyphicon glyphicon-file"
+        aria-hidden="true"></span> Arkaplan Resmi Yükle
+      <input type="file"
+        name="fileupload"
+        id="fileupload"
+        value="value"
+        @change="handleImageUpload"
+        hidden>
+    </label>
   </form>
 </template>
 
 <script>
 export default {
   name: 'ImageUpload',
+  data() {
+    return {
+      value: null,
+    };
+  },
   methods: {
     handleImageUpload(event) {
       const file = event.target.files[0];
@@ -33,5 +43,9 @@ export default {
 .invoice-upload {
   text-align: center;
   margin-bottom: 0;
+}
+
+[hidden] {
+  display: none !important;
 }
 </style>

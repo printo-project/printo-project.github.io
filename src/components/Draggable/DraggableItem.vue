@@ -1,34 +1,107 @@
 <template>
-  <div style="height: 100px; transform: translate(0px, 0px);"
+  <div :style="style"
     class="resize-drag text-container"
-    :data-x="x"
-    :data-y="y">
+    :id="validId"
+    :data-x="item.x"
+    :data-y="item.y">
     <a class="close"
-      @click="removeItem">×</a>
+      @click="removeDraggableItem({itemIndex: index, parentIndex: item.parentIndex})">×</a>
     <span>{{ item.name }}</span>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+import { interact } from 'interactjs';
+
 export default {
   name: 'DraggableItem',
   props: {
     item: Object,
     index: Number,
   },
-  data() {
-    return {
-      x: 0,
-      y: 0,
-    };
-  },
   methods: {
-    removeItem() {
-      this.$store.dispatch('removeDraggable', {
-        itemIndex: this.index,
-        sidebarItemIndex: this.item.parentIndex,
+    dragMoveListener(event, item, index, isResize = false) {
+      let xCoord = item.x;
+      let yCoord = item.y;
+
+      if (isResize) {
+        // update the element's style
+        const width = `${event.rect.width}px`;
+        const height = `${event.rect.height}px`;
+
+        // translate when resizing from top or left edges
+        xCoord += event.deltaRect.left;
+        yCoord += event.deltaRect.top;
+
+        this.moveResizeDraggableItem({
+          index,
+          x: xCoord,
+          y: yCoord,
+          width,
+          height,
+        });
+
+        return;
+      }
+
+      xCoord += event.dx;
+      yCoord += event.dy;
+
+      this.moveDraggableItem({
+        index,
+        x: xCoord,
+        y: yCoord,
       });
     },
+    initializeResizeDrag() {
+      interact(`#${this.validId}`)
+        .draggable({
+          inertia: true,
+          restrict: {
+            restriction: 'parent',
+            endOnly: true,
+            elementRect: {
+              top: 0,
+              left: 0,
+              bottom: 1,
+              right: 1,
+            },
+          },
+          autoScroll: true,
+          onmove: event => this.dragMoveListener(event, this.item, this.index),
+        })
+        .resizable({
+          preserveAspectRatio: false,
+          edges: {
+            left: true,
+            right: true,
+            bottom: true,
+            top: true,
+          },
+        })
+        .on('resizemove', event => this.dragMoveListener(event, this.item, this.index, true));
+    },
+    ...mapActions([
+      'removeDraggableItem',
+      'moveDraggableItem',
+      'moveResizeDraggableItem',
+    ]),
+  },
+  computed: {
+    validId() {
+      return this.item.name.replace(/\W/g, '_');
+    },
+    style() {
+      return {
+        transform: `translate(${this.item.x}px, ${this.item.y}px)`,
+        width: this.item.width,
+        height: this.item.height,
+      };
+    },
+  },
+  created() {
+    this.initializeResizeDrag();
   },
 };
 </script>

@@ -7,23 +7,23 @@
   <li v-else
     class="element"
     :class="{disabled: this.item.disabled}"
-    @click="addItem">
+    @click="addDraggableItem({itemIndex: index, name: item.name})">
     <a href="#">{{ item.name }}</a>
   </li>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: 'SidebarItem',
   props: {
     item: Object,
     index: Number,
   },
-  methods: {
-    addItem() {
-      this.$store.dispatch('addDraggable', this.index);
-    },
-  },
+  methods: mapActions([
+    'addDraggableItem',
+  ]),
 };
 </script>
 

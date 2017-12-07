@@ -1,22 +1,34 @@
 <template>
   <button type="button"
-    class="btn btn-default line-creator"
-    id=id
-    data-y=y
-    data-title=lineTitle>
-    <span class="glyphicon" :class="icon"
-      aria-hidden="true"></span>
-    {{ text }}
+    class="btn btn-default"
+    :class="{disabled: button.disabled, righty: index === 1}"
+    @click="addDraggableLine(index)">
+
+    <icon :icon="button.icon" /> {{ button.text }}
   </button>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+import Icon from '../Common/Icon';
+
 export default {
   name: 'LineButton',
-  props: ['id', 'y', 'lineTitle', 'icon', 'text'],
+  components: {
+    Icon,
+  },
+  props: {
+    button: Object,
+    index: Number,
+  },
+  methods: mapActions([
+    'addDraggableLine',
+  ]),
 };
 </script>
 
 <style>
-
+.righty {
+  margin-left: 4px;
+}
 </style>
