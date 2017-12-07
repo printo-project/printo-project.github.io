@@ -2,5 +2,6 @@
   "eslint.enable": true,
   "prettier.singleQuote": true,
   "prettier.trailingComma": "es5",
-  "vetur.format.defaultFormatter.html": "js-beautify-html"
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true
 }
