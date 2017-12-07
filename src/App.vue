@@ -1,63 +1,17 @@
 <template>
   <div id="app"
     class="container-fluid">
-    <topbar />
-    <div class="row">
-      <sidebar />
-      <page />
-    </div>
+    <builder />
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-import Sidebar from './components/Sidebar/Sidebar';
-import Page from './components/Page';
-import Topbar from './components/Header/Topbar';
-
-axios.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem('token')}`;
-axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-axios.defaults.headers.common['Content-Type'] = ' application/json';
-axios.defaults.headers.patch['Content-Type'] = 'application/json';
-axios.defaults.headers.post['Content-Type'] = 'application/json';
-axios.defaults.headers.put['Content-Type'] = 'application/json';
-axios.defaults.params = {};
-axios.defaults.baseURL = 'http://nkolayofis.dev/api';
+import Builder from './pages/builder';
 
 export default {
   name: 'app',
   components: {
-    Sidebar,
-    Page,
-    Topbar,
-  },
-  created() {
-    if (window.localStorage) {
-      if (localStorage.getItem('token') === null) {
-        this.authenticate();
-      }
-    }
-  },
-  methods: {
-    authenticate() {
-      const authUrl = '/auth';
-
-      const email = 'burak.karakan@gmail.com';
-      const password = 'karakan';
-
-      axios.post(authUrl, { email, password })
-        .then((response) => {
-          localStorage.setItem('token', response.data.data);
-        });
-    },
-    getParameterByName(name, url = window.location.href) {
-      const cleanName = name.replace(/[[\]]/g, '\\$&');
-      const regex = new RegExp(`[?&]${cleanName}(=([^&#]*)|&|#|$)`);
-      const results = regex.exec(url);
-      if (!results) return null;
-      if (!results[2]) return '';
-      return decodeURIComponent(results[2].replace(/\+/g, ' '));
-    },
+    Builder,
   },
 };
 </script>
@@ -96,12 +50,12 @@ body {
 
 .line-drag .close {
   color: white;
-  opacity: .5;
+  opacity: 0.5;
   line-height: 16px;
 }
 
 .line-drag .close:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .glyphicon {
