@@ -13,6 +13,7 @@ export default {
 <style>
 body {
   background: rgb(204, 204, 204);
+  cursor: default;
 }
 
 #invoice {
