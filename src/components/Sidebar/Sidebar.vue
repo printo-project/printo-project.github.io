@@ -25,9 +25,6 @@ export default {
 </script>
 
 <style>
-#sidebar {
-  margin-left: 5vw;
-}
 .nav {
   background-color: white;
 }

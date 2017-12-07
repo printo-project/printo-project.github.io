@@ -1,5 +1,10 @@
 <template>
-  <div>
+  <div id="builder-wrapper">
+    <div class="row">
+      <div class="col-md-2">
+        <image-card/>
+      </div>
+    </div>
     <div class="row" id="builder-canvas">
       <sidebar />
       <page />
@@ -23,7 +28,12 @@ export default {
 </script>
 
 <style>
+#builder-wrapper {
+  margin-top: 3vh;
+  margin-left: 5vw;
+}
+
 #builder-canvas {
-  margin-top: 10vh;
+  margin-top: 3vh;
 }
 </style>
