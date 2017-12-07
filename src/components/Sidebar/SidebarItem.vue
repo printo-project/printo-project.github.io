@@ -1,13 +1,14 @@
 <template>
-  <li v-if="type == 'title'"
+  <li v-if="item.isTitle !== undefined"
     class="nav-title">
-    {{ title }}</li>
+    {{ item.name }}
+  </li>
 
   <li v-else
     class="element"
-    :data-title="title"
-    @click="addItem()">
-    <a href="#">{{ title }}</a>
+    :class="{disabled: this.item.disabled}"
+    @click="addItem">
+    <a href="#">{{ item.name }}</a>
   </li>
 </template>
 
@@ -15,16 +16,12 @@
 export default {
   name: 'SidebarItem',
   props: {
-    title: String,
-    type: {
-      type: String,
-      default: '',
-    },
+    item: Object,
+    index: Number,
   },
   methods: {
     addItem() {
-      console.log('emitting item');
-      this.$emit('added');
+      this.$store.dispatch('addDraggable', this.index);
     },
   },
 };

@@ -1,12 +1,15 @@
 <template>
   <div class="resize-container"
     id="resize-container">
-    <draggable-item v-for="count in componentCount"
-      :key="count.id" />
+    <draggable-item v-for="(item, index) in items"
+      :key="item.parentIndex"
+      :item="item"
+      :index="index"/>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import { interact } from 'interactjs';
 import Helpers from '../mixins/Helpers';
 import DraggableItem from './DraggableItem';
@@ -16,11 +19,6 @@ export default {
   mixins: [Helpers],
   components: {
     DraggableItem,
-  },
-  data() {
-    return {
-      componentCount: 2,
-    };
   },
   methods: {
     dragMoveListener(event) {
@@ -124,42 +122,11 @@ export default {
           target.setAttribute('data-y', y);
         });
     },
-    createDraggableElement() {
-      // Create a draggable node with the element title.
-      const title = this.getAttribute('data-title');
-      const div = this.createDraggableNode(title);
-
-      // Add the element to the draggable area.
-      const container = document.getElementById('resize-container');
-      container.appendChild(div);
-
-      // Using an if statement to check the class
-      this.classList.add('disabled');
-    },
-    removeDraggableElement() {
-      const title = this.parentElement.getAttribute('data-title');
-      const menuElement = document.querySelectorAll(`[data-title="${title}"]`)[0];
-      menuElement.classList.remove('disabled');
-      this.parentElement.remove();
-    },
-
-    createDraggableNode(title) {
-      const uniqId = this.generateUniqueId();
-
-      const div = document.createElement('div');
-      div.className = 'resize-drag text-container';
-      div.style.height = '100px';
-      div.id = uniqId;
-      div.setAttribute('data-title', title);
-
-      div.appendChild(this.createCloseButton(this.removeDraggableElement));
-
-      const span = document.createElement('span');
-      span.textContent = title;
-      div.appendChild(span);
-
-      return div;
-    },
+  },
+  computed: {
+    ...mapState({
+      items: state => state.draggableItems,
+    }),
   },
   created() {
     this.initializeResizeDrag();
@@ -169,5 +136,8 @@ export default {
 </script>
 
 <style>
-
+.resize-container {
+  width: 100%;
+  height: 100%;
+}
 </style>

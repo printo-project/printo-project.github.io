@@ -5,23 +5,9 @@ export default {
       console.log(s);
     },
 
-    addEventListener(elementClass, event, callback) {
-      const elements = document.getElementsByClassName(elementClass);
-      for (let i = 0; i < elements.length; i += 1) {
-        elements[i].addEventListener(event, callback);
-      }
-    },
-
     generateUniqueId() {
       const randLetter = String.fromCharCode(65 + Math.floor(Math.random() * 26));
       return randLetter + Date.now();
-    },
-    createCloseButton(clickHandler) {
-      const closeButton = document.createElement('a');
-      closeButton.className = 'close';
-      closeButton.innerHTML = '&times;';
-      closeButton.addEventListener('click', clickHandler);
-      return closeButton;
     },
 
     handleFileUpload() {
