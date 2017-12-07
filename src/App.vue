@@ -1,18 +1,12 @@
 <template>
-  <div id="app"
-    class="container-fluid">
-    <builder />
+  <div id="app" class="container-fluid">
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Builder from './pages/builder';
-
 export default {
   name: 'app',
-  components: {
-    Builder,
-  },
 };
 </script>
 
