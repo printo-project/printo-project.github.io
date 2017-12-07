@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <image-card/>
     <div class="jumbotron">
       <h1 class="display-3">Ne hazırlamak istersiniz?</h1>
       <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
@@ -13,8 +14,13 @@
 </template>
 
 <script>
+import ImageCard from './../components/Common/ImageCard';
+
 export default {
   name: 'index',
+  components: {
+    ImageCard,
+  },
 };
 </script>
 

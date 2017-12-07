@@ -1,14 +1,10 @@
 <template>
-  <li v-if="item.isTitle !== undefined"
-    class="nav-title">
+  <li v-if="item.isTitle !== undefined" class="nav-title">
     {{ item.name }}
   </li>
 
-  <li v-else
-    class="element"
-    :class="{disabled: this.item.disabled}"
-    @click="addDraggableItem({itemIndex: index, name: item.name})">
-    <a href="#">{{ item.name }}</a>
+  <li v-else class="element nav-item" :class="{disabled: this.item.disabled}" @click="addDraggableItem({itemIndex: index, name: item.name})">
+    <a href="#" class="nav-link">{{ item.name }}</a>
   </li>
 </template>
 
@@ -21,9 +17,7 @@ export default {
     item: Object,
     index: Number,
   },
-  methods: mapActions([
-    'addDraggableItem',
-  ]),
+  methods: mapActions(['addDraggableItem']),
 };
 </script>
 

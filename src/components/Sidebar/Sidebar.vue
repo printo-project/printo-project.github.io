@@ -1,6 +1,6 @@
 <template>
-  <div class="col-md-3 col-md-offset-1">
-    <ul class="nav nav-pills nav-stacked">
+  <div class="col-md-3" id="sidebar">
+    <ul class="nav flex-column">
       <sidebar-item v-for="(item, index) in items"
         :key="item.id"
         :index="index"
@@ -25,6 +25,9 @@ export default {
 </script>
 
 <style>
+#sidebar {
+  margin-left: 5vw;
+}
 .nav {
   background-color: white;
 }

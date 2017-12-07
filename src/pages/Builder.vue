@@ -1,7 +1,6 @@
 <template>
   <div>
-    <topbar />
-    <div class="row">
+    <div class="row" id="builder-canvas">
       <sidebar />
       <page />
     </div>
@@ -11,18 +10,20 @@
 <script>
 import Sidebar from './../components/Sidebar/Sidebar';
 import Page from './../components/Page';
-import Topbar from './../components/Header/Topbar';
+import ImageCard from './../components/Common/ImageCard';
 
 export default {
   name: 'Builder',
   components: {
     Sidebar,
     Page,
-    Topbar,
+    ImageCard,
   },
 };
 </script>
 
 <style>
-
+#builder-canvas {
+  margin-top: 10vh;
+}
 </style>
