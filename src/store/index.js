@@ -8,9 +8,6 @@ import page from './modules/page';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-    pageBackground: '',
-  },
   modules: {
     sidebar,
     topbar,

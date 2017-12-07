@@ -7,6 +7,14 @@ export default {
   },
   actions: {
 
+    setItems(context, items) {
+      context.commit('setItems', items);
+    },
+
+    setLines(context, lines) {
+      context.commit('setLines', lines);
+    },
+
     /**
      * Add a draggable object to the page, by disabling the menu item and creating a draggable.
      * @param {*} param0 - commit method of the context object.
@@ -90,6 +98,15 @@ export default {
     },
   },
   mutations: {
+
+    setItems(state, items) {
+      state.items = items;
+    },
+
+    setLines(state, lines) {
+      state.lines = lines;
+    },
+
     moveDraggableItem(state, payload) {
       state.items[payload.index].x = payload.x;
       state.items[payload.index].y = payload.y;

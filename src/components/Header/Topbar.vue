@@ -9,8 +9,11 @@
         :button="button"
         :index="index" />
     </div>
-    <div class="col-md-5">
-      <remove-buttons />
+    <div class="col-md-4">
+      <div class="pull-right right-buttons">
+        <remove-buttons :disabled="noItemsExist" />
+        <save-button :disabled="noItemsExist" />
+      </div>
     </div>
   </div>
 </template>
@@ -20,6 +23,7 @@ import { mapState } from 'vuex';
 import ImageUpload from './ImageUpload';
 import LineButton from './LineButton';
 import RemoveButtons from './RemoveButtons';
+import SaveButton from './SaveButton';
 
 export default {
   name: 'Topbar',
@@ -27,10 +31,21 @@ export default {
     ImageUpload,
     LineButton,
     RemoveButtons,
+    SaveButton,
   },
-  computed: mapState({
-    buttons: state => state.topbar.buttons,
-  }),
+  computed: {
+    noItemsExist() {
+      return !(this.draggableItems.length > 0 ||
+        this.draggableLines.length > 0 ||
+        this.background !== '');
+    },
+    ...mapState({
+      buttons: state => state.topbar.buttons,
+      draggableLines: state => state.draggable.lines,
+      draggableItems: state => state.draggable.items,
+      background: state => state.page.background,
+    }),
+  },
 };
 </script>
 
@@ -38,5 +53,13 @@ export default {
 .header {
   margin-top: 24px;
   margin-bottom: 24px;
+}
+
+.right-buttons {
+  padding-right: 16px;
+}
+
+.btn-danger {
+  border: none;
 }
 </style>
