@@ -1,9 +1,9 @@
 <template>
   <div class="row header">
-    <div class="col-md-3">
+    <div class="col-md-3 offset-md-1">
       <image-upload />
     </div>
-    <div class="col-md-4 offset-md-4">
+    <div class="col-md-4 offset-md-3">
       <div class="float-right">
         <remove-buttons :disabled="noItemsExist" />
         <save-button :disabled="noItemsExist" />
