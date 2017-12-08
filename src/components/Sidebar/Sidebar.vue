@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-3" id="sidebar">
+  <div class="col-md-3 offset-md-1" id="sidebar">
     <ul class="nav flex-column">
       <sidebar-item v-for="(item, index) in items"
         :key="item.id"
