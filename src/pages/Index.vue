@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <div class="jumbotron jumbotron-fluid text-center">
-      <h1 class="display-3">Tired of copy-pasting?</h1>
-      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+      <h1 class="display-3">Design & Print</h1>
+      <p class="lead">You need wedding invitations, invoices or certificates to give away to people? Just design how it looks, give the necessary information to fill in, and just print!</p>
+      <br />
       <div class="card-deck">
         <div class="card">
           <img class="card-img-top" src="/static/img/wedding.jpg" alt="Card image cap">
@@ -36,11 +36,11 @@
           </div>
         </div>
         <div class="card">
-          <img class="card-img-top" src="/static/img/background.jpg" alt="Card image cap">
+          <img class="card-img-top" src="/static/img/certificate.jpg" alt="Card image cap">
           <div class="card-body">
             <div class="row">
               <div class="col-md-8">
-                <h5>Wedding Invitation</h5>
+                <h5>Certificate</h5>
               </div>
               <div class="col-md-4">
                 <router-link to="/builder" class="btn btn-secondary btn-sm">Start Now
@@ -72,10 +72,13 @@ export default {
 .btn {
   float: right;
 }
-h4{
+h4 {
   margin-bottom: 0;
 }
 i {
   margin-left: 2vh;
+}
+.jumbotron{
+  padding-top: 40px;
 }
 </style>
