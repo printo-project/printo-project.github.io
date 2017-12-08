@@ -68,9 +68,9 @@ export default {
       this.entries.splice(index, 1);
     },
     saveEntries() {
-      this.setItems(this.entries);
+      this.setEntries(this.entries);
     },
-    ...mapActions(['setItems']),
+    ...mapActions(['setEntries']),
   },
   mounted() {
     this.addNewEntry();
