@@ -1,11 +1,6 @@
 <template>
-  <div :style="style"
-    class="resize-drag text-container"
-    :id="validId"
-    :data-x="item.x"
-    :data-y="item.y">
-    <a class="close"
-      @click="removeDraggableItem({itemIndex: index, parentIndex: item.parentIndex})">×</a>
+  <div :style="style" class="resize-drag text-container" :id="validId" :data-x="item.x" :data-y="item.y">
+    <a class="close" @click="removeDraggableItem({itemIndex: index, parentIndex: item.parentIndex})">×</a>
     <span>{{ item.name }}</span>
   </div>
 </template>
@@ -80,7 +75,9 @@ export default {
             top: true,
           },
         })
-        .on('resizemove', event => this.dragMoveListener(event, this.item, this.index, true));
+        .on('resizemove', event =>
+          this.dragMoveListener(event, this.item, this.index, true),
+        );
     },
     ...mapActions([
       'removeDraggableItem',
@@ -120,6 +117,7 @@ export default {
   padding: 10px;
   box-sizing: border-box;
   position: absolute;
+  cursor: move;
 }
 
 .text-container {

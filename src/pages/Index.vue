@@ -51,14 +51,18 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </template>
 
 <script>
+import ImageCard from './../components/Common/ImageCard';
+
 export default {
   name: 'index',
+  components: {
+    ImageCard,
+  },
 };
 </script>
 
