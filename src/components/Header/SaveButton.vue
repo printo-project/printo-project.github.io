@@ -1,7 +1,7 @@
 <template>
-  <button class="btn btn-success" type="button" :disabled="disabled">
+  <router-link to="/builder/input" class="btn btn-success">
     <i class="fa fa-floppy-o" aria-hidden="true"></i> Kaydet
-  </button>
+  </router-link>
 </template>
 
 <script>
