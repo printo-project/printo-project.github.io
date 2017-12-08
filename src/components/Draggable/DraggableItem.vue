@@ -55,7 +55,6 @@ export default {
           inertia: true,
           restrict: {
             restriction: 'parent',
-            endOnly: true,
             elementRect: {
               top: 0,
               left: 0,

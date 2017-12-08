@@ -3,14 +3,14 @@
     <div class="col-md-2 offset-md-1">
       <image-upload />
     </div>
-    <p class="text-uppercase font-weight-light d-flex align-items-lg-end">OR</p>
+    <p class="text-uppercase font-weight-light d-flex align-items-lg-end" style="margin-left:2.5%;">OR</p>
     <div class="col-md-1">
-      <button class="btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#collapse-templates" aria-expanded="false" aria-controls="collapseExample">
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-templates" aria-expanded="false" aria-controls="collapseExample">
         <i class="fa fa-clone" aria-hidden="true"></i> Use our templates
       </button>
     </div>
 
-    <div class="col-md-4 offset-md-3">
+    <div class="col-md-4 offset-md-2">
       <div class="float-right">
         <remove-buttons :disabled="noItemsExist" />
         <save-button :disabled="noItemsExist" />

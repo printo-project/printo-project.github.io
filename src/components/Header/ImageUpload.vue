@@ -1,7 +1,7 @@
 <template>
   <form action="myform.cgi" class="invoice-upload">
-    <label class="btn btn-primary">
-      <i class="fa fa-upload" aria-hidden="true"></i> Arkaplan Resmi Yükle
+    <label class="btn btn-outline-primary">
+      <i class="fa fa-upload" aria-hidden="true"></i> Upload Background Image
       <input type="file" name="fileupload" id="fileupload" value="value" @change="handleImageUpload" hidden>
     </label>
   </form>
