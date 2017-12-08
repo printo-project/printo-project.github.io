@@ -5,7 +5,7 @@
     </div>
     <p class="text-uppercase font-weight-light d-flex align-items-lg-end">OR</p>
     <div class="col-md-1">
-      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-templates" aria-expanded="false" aria-controls="collapseExample">
+      <button class="btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#collapse-templates" aria-expanded="false" aria-controls="collapseExample">
         <i class="fa fa-clone" aria-hidden="true"></i> Use our templates
       </button>
     </div>
