@@ -33,7 +33,9 @@
     </table>
     <div class="row">
       <div class="col-md-1 offset-md-11" @click="saveEntries()">
-        <button id="save-button" class="btn btn-success">Save</button>
+        <router-link to="/builder/print" class="btn btn-success">
+          <i class="fa fa-floppy-o" aria-hidden="true"></i> Save
+        </router-link>
       </div>
     </div>
   </div>
