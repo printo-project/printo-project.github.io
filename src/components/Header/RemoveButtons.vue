@@ -14,7 +14,7 @@
 
 <script>
 import { mapActions } from 'vuex';
-import Icon from '@/components/Common/Icon';G
+import Icon from '@/components/Common/Icon';
 
 export default {
   name: 'RemoveButtons',
