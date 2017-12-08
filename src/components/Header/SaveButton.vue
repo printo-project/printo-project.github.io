@@ -2,7 +2,7 @@
   <button type="button"
     class="btn btn-default"
     :disabled="disabled">
-    <icon :icon="'glyphicon glyphicon-floppy-disk'" /> Kaydet
+    <i class="fa fa-floppy-o" aria-hidden="true"></i> Kaydet
   </button>
 </template>
 
