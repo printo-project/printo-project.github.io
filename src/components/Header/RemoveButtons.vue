@@ -4,10 +4,10 @@
       <i class="fa fa-trash" aria-hidden="true"></i> Kaldır
     </button>
     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-      <a class="dropdown-item" href="#" @click="removeAllDraggableItems">Alanları Kaldır</a>
-      <a class="dropdown-item" href="#" @click="clearPageBackground">Resmi Kaldır</a>
+      <a class="dropdown-item" @click="removeAllDraggableItems">Alanları Kaldır</a>
+      <a class="dropdown-item" @click="clearPageBackground">Resmi Kaldır</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#" @click="clearAllDraggables">Tümünü Temizle</a>
+      <a class="dropdown-item" @click="clearAllDraggables">Tümünü Temizle</a>
     </div>
   </div>
 </template>

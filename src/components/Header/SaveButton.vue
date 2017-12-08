@@ -1,5 +1,5 @@
 <template>
-  <button class="btn btn-outline-success" type="button" :disabled="disabled">
+  <button class="btn btn-success" type="button" :disabled="disabled">
     <i class="fa fa-floppy-o" aria-hidden="true"></i> Kaydet
   </button>
 </template>
