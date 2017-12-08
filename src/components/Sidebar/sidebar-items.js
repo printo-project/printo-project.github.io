@@ -1,34 +1,26 @@
 export default [
   {
-    name: 'Kişisel Bilgiler',
+    name: 'Fields',
     isTitle: true,
   },
   {
-    name: 'Müşteri Adı',
+    name: 'Date',
     disabled: false,
   },
   {
-    name: 'Müşteri Ünvanı',
+    name: 'Event Name',
     disabled: false,
   },
   {
-    name: 'Müşteri Adresi',
+    name: 'Participant Name',
     disabled: false,
   },
   {
-    name: 'Müşteri Telefonu',
+    name: 'Organization Name',
     disabled: false,
   },
   {
-    name: 'Vergi Dairesi',
-    disabled: false,
-  },
-  {
-    name: 'Vergi Numarası',
-    disabled: false,
-  },
-  {
-    name: 'Düzenlenme Atı',
+    name: 'Certificate Message',
     disabled: false,
   },
 ];
