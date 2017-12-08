@@ -1,26 +1,62 @@
 export default [
   {
-    name: 'Fields',
+    name: 'Company Information',
     isTitle: true,
   },
   {
-    name: 'Date',
+    name: 'Company Name',
     disabled: false,
   },
   {
-    name: 'Event Name',
+    name: 'Company Branch',
     disabled: false,
   },
   {
-    name: 'Participant Name',
+    name: 'Company Address',
     disabled: false,
   },
   {
-    name: 'Organization Name',
+    name: 'Company Phone',
     disabled: false,
   },
   {
-    name: 'Certificate Message',
+    name: 'Customer Information',
+    isTitle: true,
+  },
+  {
+    name: 'Customer Name',
+    disabled: false,
+  },
+  {
+    name: 'Customer Branch',
+    disabled: false,
+  },
+  {
+    name: 'Customer Address',
+    disabled: false,
+  },
+  {
+    name: 'Customer Phone',
+    disabled: false,
+  },
+  {
+    name: 'Invoice Information',
+    isTitle: true,
+  },
+  {
+    name: 'Invoice Number',
+    disabled: false,
+  },
+  {
+    name: 'Invoice Date',
+    disabled: false,
+  },
+  {
+    name: 'Invoice Address',
+    disabled: false,
+  },
+  {
+    name: 'Invoice Total',
     disabled: false,
   },
 ];

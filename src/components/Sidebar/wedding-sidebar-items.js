@@ -1,26 +1,38 @@
 export default [
   {
-    name: 'Fields',
+    name: 'People',
     isTitle: true,
   },
   {
-    name: 'Date',
+    name: 'Bride Name',
     disabled: false,
   },
   {
-    name: 'Event Name',
+    name: 'Groom Name',
     disabled: false,
   },
   {
-    name: 'Participant Name',
+    name: 'Bride\'s Family',
     disabled: false,
   },
   {
-    name: 'Organization Name',
+    name: 'Groom\'s Family',
     disabled: false,
   },
   {
-    name: 'Certificate Message',
+    name: 'About the Wedding',
+    isTitle: true,
+  },
+  {
+    name: 'Address',
+    disabled: false,
+  },
+  {
+    name: 'Date & Time',
+    disabled: false,
+  },
+  {
+    name: 'Message',
     disabled: false,
   },
 ];
