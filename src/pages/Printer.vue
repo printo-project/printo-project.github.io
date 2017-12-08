@@ -33,11 +33,14 @@ export default {
 </script>
 
 <style>
-.container, .container-fluid {
-  padding-left: 0 !important;
-}
+@media print {
+  .container,
+  .container-fluid {
+    padding-left: 0 !important;
+  }
 
-.container {
-  margin-left: 0;
+  .container {
+    margin-left: 0;
+  }
 }
 </style>

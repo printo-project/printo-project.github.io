@@ -7,6 +7,10 @@ import Index from '@/pages/Index';
 import DataInput from '@/pages/DataInput';
 import Printer from '@/pages/Printer';
 
+import certificateSidebar from '@/components/Sidebar/certificate-sidebar-items';
+import weddingSidebar from '@/components/Sidebar/wedding-sidebar-items';
+import invoiceSidebar from '@/components/Sidebar/invoice-sidebar-items';
+
 Vue.use(VueRouter);
 
 export default new VueRouter({
@@ -17,9 +21,28 @@ export default new VueRouter({
       component: Index,
     },
     {
-      path: '/builder',
+      path: '/builder/certificate',
       name: 'Builder',
       component: Builder,
+      props: {
+        sidebarItems: certificateSidebar,
+      },
+    },
+    {
+      path: '/builder/wedding',
+      name: 'Builder',
+      component: Builder,
+      props: {
+        sidebarItems: weddingSidebar,
+      },
+    },
+    {
+      path: '/builder/invoice',
+      name: 'Builder',
+      component: Builder,
+      props: {
+        sidebarItems: invoiceSidebar,
+      },
     },
     {
       path: '/builder/input',
