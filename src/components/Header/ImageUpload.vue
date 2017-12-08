@@ -1,9 +1,8 @@
 <template>
   <form action="myform.cgi"
     class="invoice-upload">
-    <label class="btn btn-default btn-block">
-      <span class="glyphicon glyphicon-file"
-        aria-hidden="true"></span> Arkaplan Resmi Yükle
+    <label class="btn btn-primary">
+      Arkaplan Resmi Yükle
       <input type="file"
         name="fileupload"
         id="fileupload"
