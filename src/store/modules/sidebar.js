@@ -1,11 +1,19 @@
 /* eslint-disable no-param-reassign */
-import items from '@/components/Sidebar/sidebar-items';
 
 export default {
   state: {
-    items,
+    items: [],
+  },
+  actions: {
+    setSidebarItems(context, allItems) {
+      context.commit('setSidebarItems', allItems);
+    },
   },
   mutations: {
+    setSidebarItems(state, allItems) {
+      state.items = allItems;
+    },
+
     /**
      * Toggle the disabled value of the given sidebar element.
      * @argument itemIndex - index of the item that will be removed.

@@ -35,6 +35,7 @@ export default {
     ImageCard,
     Topbar,
   },
+  props: ['sidebarItems'],
   data() {
     return {
       images: [
@@ -47,11 +48,14 @@ export default {
       ],
     };
   },
+  created() {
+    this.setSidebarItems(this.sidebarItems);
+  },
   methods: {
     setBackground(image) {
       this.setPageBackground(`url(${image})`);
     },
-    ...mapActions(['setPageBackground']),
+    ...mapActions(['setPageBackground', 'setSidebarItems']),
   },
 };
 </script>
