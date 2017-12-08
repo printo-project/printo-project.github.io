@@ -13,7 +13,7 @@
                 <h5>Wedding Invitation</h5>
               </div>
               <div class="col-md-4">
-                <router-link to="/builder" class="btn btn-secondary btn-sm">Start Now
+                <router-link to="/builder/wedding" class="btn btn-secondary btn-sm">Start Now
                   <i class="fa fa-arrow-right" aria-hidden="true"></i>
                 </router-link>
               </div>
@@ -28,7 +28,7 @@
                 <h5>Invoice</h5>
               </div>
               <div class="col-md-4">
-                <router-link to="/builder" class="btn btn-secondary btn-sm">Start Now
+                <router-link to="/builder/invoice" class="btn btn-secondary btn-sm">Start Now
                   <i class="fa fa-arrow-right" aria-hidden="true"></i>
                 </router-link>
               </div>
@@ -43,7 +43,7 @@
                 <h5>Certificate</h5>
               </div>
               <div class="col-md-4">
-                <router-link to="/builder" class="btn btn-secondary btn-sm">Start Now
+                <router-link to="/builder/certificate" class="btn btn-secondary btn-sm">Start Now
                   <i class="fa fa-arrow-right" aria-hidden="true"></i>
                 </router-link>
               </div>
