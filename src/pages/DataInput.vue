@@ -6,7 +6,7 @@
       <thead>
         <tr>
           <th>#</th>
-          <th v-for="(item,index) in items" :key="index" v-if="item.name != 'Fields'">
+          <th v-for="(item,index) in items" :key="index">
             {{item.name}}
           </th>
           <th></th>
@@ -18,7 +18,7 @@
           <td scope="row">
             <b>{{(index + 1) + '-'}}</b>
           </td>
-          <td v-for="(item,index) in items" :key="index" v-if="item.name != 'Fields'">
+          <td v-for="(item,index) in items" :key="index">
             <input type="text" class="form-control" v-model="entry[item.name]">
           </td>
           <td>
@@ -47,7 +47,7 @@ export default {
     };
   },
   computed: mapState({
-    items: state => state.sidebar.items,
+    items: state => state.draggable.items,
   }),
   methods: {
     addNewEntry() {
