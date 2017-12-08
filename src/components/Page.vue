@@ -1,6 +1,6 @@
 <template>
   <div class="col-md-8">
-    <div class="page" :style="{ backgroundImage: background }" size="invitation" id="invoice">
+    <div class="page" :style="{ backgroundImage: background }" size="A4" id="invoice">
       <drag-container />
     </div>
   </div>
@@ -25,5 +25,9 @@ export default {
 .page[size='invitation'] {
   width: 21cm;
   height: 14.8cm;
+}
+.page[size='A4'] {
+  width: 21cm;
+  height: 29.7cm;
 }
 </style>
