@@ -1,7 +1,13 @@
 <template>
-  <div class="col-md-8">
-    <div class="page" :style="{ backgroundImage: background }" size="A4" id="invoice">
-      
+  <div class="page" :style="{ backgroundImage: background }" size="A4" id="invoice">
+    <div v-for="(value, key) in individualData" :key="key" :style="{
+      marginLeft: `${placements[key].x}px`,
+      marginTop: `${placements[key].y}px`,
+      width: placements[key].width,
+      height: placements[key].height,
+      backgroundImage: background,
+    }">
+      {{value}}
     </div>
   </div>
 </template>
@@ -15,11 +21,15 @@ export default {
   components: {
     DragContainer,
   },
-  computed: mapState({
-    background: state => state.page.background,
-    items: items => state.draggable.items,
-    printData: printData => state.data,
-  }),
+  props: ['placements', 'individualData'],
+  computed: {
+    distance() {
+      return pageCount * 842;
+    },
+    ...mapState({
+      background: state => state.page.background,
+    }),
+  },
 };
 </script>
 
