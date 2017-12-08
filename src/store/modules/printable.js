@@ -1,16 +1,16 @@
 /* eslint-disable no-param-reassign */
 export default {
   state: {
-    items: [],
+    entries: [],
   },
   actions: {
-    setItems(context, items) {
-      context.commit('setItems', items);
+    setEntries(context, entries) {
+      context.commit('setEntries', entries);
     },
   },
   mutations: {
-    setItems(state, items) {
-      state.items = items;
+    setEntries(state, entries) {
+      state.entries = entries;
     },
   },
 };
