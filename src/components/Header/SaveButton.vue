@@ -1,6 +1,6 @@
 <template>
   <router-link to="/builder/input" class="btn btn-success">
-    <i class="fa fa-floppy-o" aria-hidden="true"></i> Kaydet
+    <i class="fa fa-floppy-o" aria-hidden="true"></i> Save
   </router-link>
 </template>
 
