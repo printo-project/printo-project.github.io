@@ -1,12 +1,17 @@
 <template>
-  <div class="page" :style="{ backgroundImage: background }" size="A4" id="invoice">
+  <div class="page sheet" :style="{
+      background: background,
+      backgroundSize: 'contain',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center center',
+    }" size="A4" id="invoice">
+
     <div v-for="(value, key) in individualData" :key="key" :style="{
       marginLeft: `${placements[key].x}px`,
       marginTop: `${placements[key].y}px`,
       width: placements[key].width,
       height: placements[key].height,
-      backgroundImage: background,
-    }">
+    }" style="position: absolute;">
       {{value}}
     </div>
   </div>
@@ -14,18 +19,11 @@
 
 <script>
 import { mapState } from 'vuex';
-import DragContainer from './Draggable/DragContainer';
 
 export default {
   name: 'Page',
-  components: {
-    DragContainer,
-  },
   props: ['placements', 'individualData'],
   computed: {
-    distance() {
-      return pageCount * 842;
-    },
     ...mapState({
       background: state => state.page.background,
     }),
