@@ -1,11 +1,17 @@
 <template>
   <div id="builder-wrapper">
     <topbar/>
-    <div class="row">
-      <div class="col-md-2" v-for="(image, index) in images" :key="index" :index="index">
-        <image-card :image="image" v-on:click.native="setBackground(image)" />
+
+    <div id="templates">
+      <div class="collapse" id="collapse-templates">
+        <div class="row">
+          <div class="col-md-2" v-for="(image, index) in images" :key="index" :index="index">
+            <image-card :image="image" v-on:click.native="setBackground(image)" />
+          </div>
+        </div>
       </div>
     </div>
+
     <div class="row" id="builder-canvas">
       <sidebar />
       <page />
@@ -57,5 +63,9 @@ export default {
 
 #builder-canvas {
   margin-top: 3vh;
+}
+
+#templates {
+  text-align: center;
 }
 </style>
