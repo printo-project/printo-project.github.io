@@ -15,6 +15,7 @@ body {
   cursor: default;
   background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);
   height: 100%;
+  min-height: 100vh;
 }
 
 #invoice {

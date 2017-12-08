@@ -4,20 +4,26 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Builder from '@/pages/Builder';
 import Index from '@/pages/Index';
+import DataInput from '@/pages/DataInput';
 
 Vue.use(VueRouter);
 
 export default new VueRouter({
   routes: [
     {
+      path: '/',
+      name: 'Index',
+      component: Index,
+    },
+    {
       path: '/builder',
       name: 'Builder',
       component: Builder,
     },
     {
-      path: '/',
-      name: 'Index',
-      component: Index,
+      path: '/builder/input',
+      name: 'Data Input',
+      component: DataInput,
     },
   ],
 });
