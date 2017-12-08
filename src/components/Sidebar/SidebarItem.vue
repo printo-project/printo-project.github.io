@@ -4,7 +4,7 @@
   </li>
 
   <li v-else class="element nav-item" :class="{disabled: this.item.disabled}" @click="addDraggableItem({itemIndex: index, name: item.name})">
-    <a href="#" class="nav-link">{{ item.name }}</a>
+    <a href="javascript:void(0);" class="nav-link">{{ item.name }}</a>
   </li>
 </template>
 

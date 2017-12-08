@@ -1,42 +1,14 @@
 <template>
-  <div class="btn-group">
-    <button type="button"
-      class="btn btn-danger dropdown-toggle"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-      :disabled="disabled">
-      <icon :icon="'glyphicon glyphicon-remove'" /> Kaldır
-      <span class="caret"></span>
+  <div class="btn-group" role="group">
+    <button id="btnGroupDrop1" type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" :disabled="disabled">
+      <i class="fa fa-trash" aria-hidden="true"></i> Kaldır
     </button>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="#"
-          @click="removeAllDraggableItems">
-          Alanları Kaldır
-        </a>
-      </li>
-      <li>
-        <a href="#"
-          @click="removeAllDraggableLines">
-          Çizgileri Kaldır
-        </a>
-      </li>
-      <li>
-        <a href="#"
-          @click="clearPageBackground">
-          Resmi Kaldır
-        </a>
-      </li>
-      <li role="separator"
-        class="divider"></li>
-      <li>
-        <a href="#"
-          @click="clearAllDraggables">
-          Tümünü Temizle
-        </a>
-      </li>
-    </ul>
+    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+      <a class="dropdown-item" @click="removeAllDraggableItems">Alanları Kaldır</a>
+      <a class="dropdown-item" @click="clearPageBackground">Resmi Kaldır</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" @click="clearAllDraggables">Tümünü Temizle</a>
+    </div>
   </div>
 </template>
 
@@ -55,12 +27,10 @@ export default {
   methods: {
     clearAllDraggables() {
       this.removeAllDraggableItems();
-      this.removeAllDraggableLines();
       this.clearPageBackground();
     },
     ...mapActions([
       'removeAllDraggableItems',
-      'removeAllDraggableLines',
       'clearPageBackground',
     ]),
   },

@@ -1,15 +1,8 @@
 <template>
-  <form action="myform.cgi"
-    class="invoice-upload">
-    <label class="btn btn-default btn-block">
-      <span class="glyphicon glyphicon-file"
-        aria-hidden="true"></span> Arkaplan Resmi Yükle
-      <input type="file"
-        name="fileupload"
-        id="fileupload"
-        value="value"
-        @change="handleImageUpload"
-        hidden>
+  <form action="myform.cgi" class="invoice-upload">
+    <label class="btn btn-outline-primary">
+      <i class="fa fa-upload" aria-hidden="true"></i> Upload Background Image
+      <input type="file" name="fileupload" id="fileupload" value="value" @change="handleImageUpload" hidden>
     </label>
   </form>
 </template>
@@ -41,7 +34,6 @@ export default {
 
 <style>
 .invoice-upload {
-  text-align: center;
   margin-bottom: 0;
 }
 

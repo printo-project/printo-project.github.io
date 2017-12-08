@@ -1,8 +1,6 @@
 <template>
-  <button type="button"
-    class="btn btn-default"
-    :disabled="disabled">
-    <icon :icon="'glyphicon glyphicon-floppy-disk'" /> Kaydet
+  <button class="btn btn-success" type="button" :disabled="disabled">
+    <i class="fa fa-floppy-o" aria-hidden="true"></i> Kaydet
   </button>
 </template>
 
