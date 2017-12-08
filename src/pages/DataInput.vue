@@ -31,12 +31,16 @@
         </tr>
       </tbody>
     </table>
-
+    <div class="row">
+      <div class="col-md-1 offset-md-11" @click="saveEntries()">
+        <button id="save-button" class="btn btn-success">Save</button>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 
 export default {
   name: 'DataInput',
@@ -63,6 +67,10 @@ export default {
     deleteEntry(index) {
       this.entries.splice(index, 1);
     },
+    saveEntries() {
+      this.setItems(this.entries);
+    },
+    ...mapActions(['setItems']),
   },
   mounted() {
     this.addNewEntry();
@@ -71,14 +79,14 @@ export default {
 </script>
 
 <style scoped>
-button {
+button:not(#save-button) {
   cursor: pointer;
   width: 40px;
 }
-th{
+th {
   text-align: center;
 }
-h1{
+h1 {
   padding-top: 5vh;
   padding-bottom: 5vh;
 }
