@@ -39,12 +39,12 @@ export default {
   data() {
     return {
       images: [
-        '/static/img/certificate/lq/1.jpg',
         '/static/img/certificate/lq/2.jpg',
         '/static/img/certificate/lq/3.jpg',
         '/static/img/certificate/lq/4.jpg',
         '/static/img/certificate/lq/5.jpg',
         '/static/img/certificate/lq/6.jpg',
+        '/static/img/certificate/lq/1.jpg',
       ],
     };
   },
