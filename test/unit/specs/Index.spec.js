@@ -7,7 +7,7 @@ describe('Index.vue', () => {
     const Constructor = Vue.extend(Index);
     const vm = new Constructor({ router }).$mount();
 
-    expect(vm.$el.querySelector('#invitation-title').textContent).to.equal('Wedding Invitation');
+    expect(vm.$el.querySelector('#invitation-title').textContent).to.equal('Invitation');
   });
 
   it('Invoice card title is there.', () => {
