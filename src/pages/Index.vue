@@ -1,12 +1,12 @@
 <template>
   <div class="container">
     <div class="jumbotron jumbotron-fluid text-center">
-      <img id="logo" src="/static/img/PrintoLogo.png">
+      <img id="logo" src="~static/img/PrintoLogo.png">
       <p class="lead">You need wedding invitations, invoices or certificates to give away to people? Just design how it looks, give the necessary information to fill in, and just print!</p>
       <br />
       <div class="card-deck">
         <div class="card">
-          <img class="card-img-top" src="/static/img/wedding.jpg" alt="Card image cap">
+          <img class="card-img-top" src="~static/img/wedding.jpg" alt="Card image cap">
           <div class="card-body">
             <div class="row">
               <div class="col-md-8">
@@ -21,7 +21,7 @@
           </div>
         </div>
         <div class="card">
-          <img class="card-img-top" src="/static/img/invoice.jpg" alt="Card image cap">
+          <img class="card-img-top" src="~static/img/invoice.jpg" alt="Card image cap">
           <div class="card-body">
             <div class="row">
               <div class="col-md-8">
@@ -36,7 +36,7 @@
           </div>
         </div>
         <div class="card">
-          <img class="card-img-top" src="/static/img/certificate.jpg" alt="Card image cap">
+          <img class="card-img-top" src="~static/img/certificate.jpg" alt="Card image cap">
           <div class="card-body">
             <div class="row">
               <div class="col-md-8">

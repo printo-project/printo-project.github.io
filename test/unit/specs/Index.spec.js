@@ -3,13 +3,6 @@ import Index from '@/pages/Index';
 import router from '@/routes';
 
 describe('Index.vue', () => {
-  it('Title is there', () => {
-    const Constructor = Vue.extend(Index);
-    const vm = new Constructor({ router }).$mount();
-
-    expect(vm.$el.querySelector('h1.display-3').textContent).to.equal('Design & Print');
-  });
-
   it('Invitation card title is there.', () => {
     const Constructor = Vue.extend(Index);
     const vm = new Constructor({ router }).$mount();
