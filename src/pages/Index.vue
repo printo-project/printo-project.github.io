@@ -2,7 +2,7 @@
   <div class="container">
     <div class="jumbotron jumbotron-fluid text-center">
       <img id="logo" src="/static/img/PrintoLogo.png">
-      <p class="lead">You need wedding invitations, invoices or certificates to give away to people? Just design how it looks, give the necessary information to fill in, and just print!</p>
+      <p class="lead">You need invitations, invoices or certificates to give away to people? Just design how it looks, give the necessary information to fill in, and just print!</p>
       <br />
       <div class="card-deck">
         <div class="card">
@@ -10,7 +10,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-md-8">
-                <h5 id="invitation-title">Wedding Invitation</h5>
+                <h5 id="invitation-title">Invitation</h5>
               </div>
               <div class="col-md-4">
                 <router-link to="/builder/wedding" class="btn btn-secondary btn-sm">Start Now
