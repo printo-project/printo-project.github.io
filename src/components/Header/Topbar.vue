@@ -10,11 +10,12 @@
       </button>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 offset-md-1">
       <div class="float-right">
         <select v-model="sIndex" @change="setState(states[sIndex])">
           <option v-for="(state,index) in states" :key="index" :value="index">{{index == 0 ? "New Template" : index}}</option>
         </select>
+        <button class="btn btn-warning" @click="resetDb()">Clear templates</button>
         <button class="btn btn-success" @click="saveState()">
           <i class="fa fa-floppy-o" aria-hidden="true"></i> Save
         </button>
@@ -39,6 +40,7 @@ export default {
     return {
       states: [],
       sIndex: 0,
+      emptyState: {},
     };
   },
   components: {
@@ -70,9 +72,22 @@ export default {
       this.states.push(JSON.parse(JSON.stringify(this.state)));
       this.sIndex = this.states.length - 1;
     },
+    resetDb() {
+      axios
+      .get('/clear-db')
+      .then(response => {
+        this.states = [];
+        this.states.push(JSON.parse(JSON.stringify(this.emptyState)));
+        this.sIndex = 0;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    },
     ...mapActions(['setState']),
   },
   created() {
+    this.emptyState = JSON.parse(JSON.stringify(this.state));
     axios.defaults.baseURL = 'http://165.227.160.150/api';
     axios
       .get('/layouts')
