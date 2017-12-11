@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="jumbotron jumbotron-fluid text-center">
-      <h1 class="display-3">Design & Print</h1>
+      <img id="logo" src="/static/img/PrintoLogo.png">
       <p class="lead">You need wedding invitations, invoices or certificates to give away to people? Just design how it looks, give the necessary information to fill in, and just print!</p>
       <br />
       <div class="card-deck">
@@ -83,6 +83,9 @@ i {
   margin-left: 2vh;
 }
 .jumbotron{
-  padding-top: 40px;
+  padding-top: 0px;
+}
+#logo{
+  max-width: 60vh;
 }
 </style>
