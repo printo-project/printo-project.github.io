@@ -10,7 +10,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-md-8">
-                <h5>Wedding Invitation</h5>
+                <h5 id="invitation-title">Wedding Invitation</h5>
               </div>
               <div class="col-md-4">
                 <router-link to="/builder/wedding" class="btn btn-secondary btn-sm">Start Now
@@ -25,7 +25,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-md-8">
-                <h5>Invoice</h5>
+                <h5 id="invoice-title">Invoice</h5>
               </div>
               <div class="col-md-4">
                 <router-link to="/builder/invoice" class="btn btn-secondary btn-sm">Start Now
@@ -40,7 +40,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-md-8">
-                <h5>Certificate</h5>
+                <h5 id="certificate-title">Certificate</h5>
               </div>
               <div class="col-md-4">
                 <router-link to="/builder/certificate" class="btn btn-secondary btn-sm">Start Now
