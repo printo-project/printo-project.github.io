@@ -1,6 +1,7 @@
 # invoice
 
 > A Vue.js project
+> Intro: https://drive.google.com/file/d/12K6UVX1ApC4OBFovGO-yCOIAqh2ufdNd/view?usp=sharing
 
 ## Build Setup
 
