@@ -22,7 +22,7 @@ export default new VueRouter({
     },
     {
       path: '/builder/certificate',
-      name: 'Builder',
+      name: 'CertificateBuilder',
       component: Builder,
       props: {
         sidebarItems: certificateSidebar,
@@ -30,7 +30,7 @@ export default new VueRouter({
     },
     {
       path: '/builder/wedding',
-      name: 'Builder',
+      name: 'WeddingBuilder',
       component: Builder,
       props: {
         sidebarItems: weddingSidebar,
@@ -38,7 +38,7 @@ export default new VueRouter({
     },
     {
       path: '/builder/invoice',
-      name: 'Builder',
+      name: 'InvoiceBuilder',
       component: Builder,
       props: {
         sidebarItems: invoiceSidebar,
