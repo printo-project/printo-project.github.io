@@ -1,6 +1,6 @@
 <template>
   <router-link to="/builder/input" class="btn btn-success">
-    Next
+    <i class="fa fa-pencil" aria-hidden="true"></i> Enter data
   </router-link>
 </template>
 
