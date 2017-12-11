@@ -10,8 +10,15 @@
       </button>
     </div>
 
-    <div class="col-md-4 offset-md-2">
+    <div class="col-md-6 offset-md-1">
       <div class="float-right">
+        <select v-model="sIndex" @change="setState(states[sIndex])">
+          <option v-for="(state,index) in states" :key="index" :value="index">{{index == 0 ? "New Template" : index}}</option>
+        </select>
+        <button class="btn btn-warning" @click="resetDb()">Clear templates</button>
+        <button class="btn btn-success" @click="saveState()">
+          <i class="fa fa-floppy-o" aria-hidden="true"></i> Save
+        </button>
         <remove-buttons :disabled="noItemsExist" />
         <save-button :disabled="noItemsExist" />
       </div>
@@ -20,13 +27,22 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+/* eslint-disable */
+import { mapState, mapActions } from 'vuex';
 import ImageUpload from './ImageUpload';
 import RemoveButtons from './RemoveButtons';
 import SaveButton from './SaveButton';
+import axios from 'axios';
 
 export default {
   name: 'Topbar',
+  data() {
+    return {
+      states: [],
+      sIndex: 0,
+      emptyState: {},
+    };
+  },
   components: {
     ImageUpload,
     RemoveButtons,
@@ -40,7 +56,49 @@ export default {
       buttons: state => state.topbar.buttons,
       draggableItems: state => state.draggable.items,
       background: state => state.page.background,
+      state: state => state,
     }),
+  },
+  methods: {
+    saveState() {
+      axios
+        .post('/layouts', JSON.stringify(this.state))
+        .then(function(response) {
+          console.log(response);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+      this.states.push(JSON.parse(JSON.stringify(this.state)));
+      this.sIndex = this.states.length - 1;
+    },
+    resetDb() {
+      axios
+      .get('/clear-db')
+      .then(response => {
+        this.states = [];
+        this.states.push(JSON.parse(JSON.stringify(this.emptyState)));
+        this.sIndex = 0;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    },
+    ...mapActions(['setState']),
+  },
+  created() {
+    this.emptyState = JSON.parse(JSON.stringify(this.state));
+    axios.defaults.baseURL = 'http://165.227.160.150/api';
+    axios
+      .get('/layouts')
+      .then(response => {
+        this.states = response.data;
+        this.states.unshift(JSON.parse(JSON.stringify(this.state)));
+        this.sIndex = 0;
+      })
+      .catch(error => {
+        console.log(error);
+      });
   },
 };
 </script>
@@ -57,5 +115,8 @@ export default {
 
 .seperator {
   text-align: center;
+}
+button {
+  cursor: pointer;
 }
 </style>

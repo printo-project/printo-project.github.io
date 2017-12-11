@@ -4,7 +4,7 @@ import router from '@/routes';
 import store from '@/store';
 
 describe('Topbar.vue', () => {
-  it('background is set to empty', () => {
+  it('button item background are there.', () => {
     const Constructor = Vue.extend(Topbar);
     const vm = new Constructor({
       router,

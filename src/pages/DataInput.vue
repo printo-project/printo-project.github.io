@@ -22,10 +22,10 @@
             <input type="text" class="form-control" v-model="entry[item.name]">
           </td>
           <td>
-            <button v-bind:style="{'visibility': (entries.length == 1) ? 'hidden' : 'visible' }" class="btn btn-danger" @click="deleteEntry(index)">-</button>
+            <button v-bind:style="{'visibility': (entries.length == 1) ? 'hidden' : 'visible' }" class="btn btn-danger" @click="deleteEntry(index);changeState()">-</button>
           </td>
           <td>
-            <button v-if="index == entries.length - 1" class="btn btn-success" @click="addNewEntry()">+</button>
+            <button v-if="index == entries.length - 1" class="btn btn-success" @click="addNewEntry();testState()">+</button>
           </td>
 
         </tr>
@@ -42,7 +42,9 @@
 </template>
 
 <script>
+/* eslint-disable */
 import { mapState, mapActions } from 'vuex';
+import axios from 'axios';
 
 export default {
   name: 'DataInput',
@@ -50,10 +52,12 @@ export default {
     return {
       name: 'Name',
       entries: [],
+      states: [],
     };
   },
   computed: mapState({
     items: state => state.draggable.items,
+    state: state => state,
   }),
   methods: {
     addNewEntry() {
@@ -66,13 +70,21 @@ export default {
       }
       this.entries.push(newEntry);
     },
+    testState() {
+      this.states.push(this.state);
+      console.log(this.state);
+    },
+    changeState() {
+      this.states[0].draggable.items[0].name = 'STATEDEĞİŞTİ';
+      this.setState(this.states[0]);
+    },
     deleteEntry(index) {
       this.entries.splice(index, 1);
     },
     saveEntries() {
       this.setEntries(this.entries);
     },
-    ...mapActions(['setEntries']),
+    ...mapActions(['setEntries','setState']),
   },
   mounted() {
     this.addNewEntry();
