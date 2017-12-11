@@ -17,13 +17,11 @@
 
 <script>
 import { mapState } from 'vuex';
-import Helpers from '../mixins/Helpers';
 import DraggableItem from './DraggableItem';
 import DraggableLine from './DraggableLine';
 
 export default {
   name: 'DragContainer',
-  mixins: [Helpers],
   components: {
     DraggableItem,
     DraggableLine,
